@@ -118,10 +118,7 @@ body {
                     <input type="password" id="password" name="password" required>
                 </div>
             
-                <div class="form-group">
-                    <label for="password_confirmation">Confirm Password:</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" required>
-                </div>
+                
             
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>

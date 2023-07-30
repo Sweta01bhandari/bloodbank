@@ -21,17 +21,17 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="password" class="col-sm-2 col-form-label">Password:</label>
-            <div class="col-sm-10">
-                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
-            </div>
-        </div>
-
+        
         <div class="form-group row">
             <label for="mobile" class="col-sm-2 col-form-label">Mobile:</label>
             <div class="col-sm-10">
                 <input type="text" name="mobile" id="mobile" class="form-control" placeholder="Enter your mobile" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">Create user?:</label>
+            <div class="col-sm-10">
+                <input type="checkbox" name="create_user" id="create_user" class="form-control"  required>
             </div>
         </div>
 

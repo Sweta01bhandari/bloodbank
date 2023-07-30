@@ -102,7 +102,7 @@ body {
   -moz-osx-font-smoothing: grayscale;      
 }
 </style>
-<h2>Admin login Page</h2>
+<h2>Login Page</h2>
 <div class="login-page">
     <div class="form">
         <form method="POST" action="{{ route('login.submit') }}">
@@ -116,10 +116,7 @@ body {
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-        
-          
-        
-            <button type="submit" class="btn btn-primary">Login</button>
+             <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
   </div>

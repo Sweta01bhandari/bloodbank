@@ -9,7 +9,7 @@
             <div class="card-body">
                 <p><strong>Name:</strong> {{ $patient->name }}</p>
                 <p><strong>Email:</strong> {{ $patient->email }}</p>
-                <p><strong>Mobile:</strong> {{ $patient->mobile }}</p>
+                <p><strong>Mobile:</strong> {{ $patient->mobile_nu}}</p>
             
             </div>
         </div>

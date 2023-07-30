@@ -41,6 +41,7 @@
         <li><a href="#">Dashboard</a></li>
         <li><a href="#">Donor</a></li>
         <li><a href="#">Patient</a></li>
+        <li><a href="#">Donation Form</a></a></li>
         <li><a href="#">Donation</a></li>
         <li><a href="#">Request</a></li>
         <li><a href="#">Logout</a></li>
@@ -57,6 +58,7 @@
         <li class="active"><a href="#section1">Blood Bank Management System</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/donor">Donor</a></li>
+        <li><a href="/blood-donation">Donation Form</a></li>
         <li><a href="/patient">Patient</a></li>
         <li><a href="/donation">Donation</a></li>
         <li><a href="/request">Request</a></li>

@@ -13,8 +13,7 @@ class DonorController extends Controller
     public function index()
     {
         $donors = Donor::all();
-
-        return view('donor.index', compact('donors'));
+         return view('donor.index', compact('donors'));
         
     }
 
@@ -29,7 +28,6 @@ class DonorController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'nullable|email',
-            'password' => 'required',
             'mobile' => 'required',
         ]);
 
@@ -57,7 +55,7 @@ class DonorController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'nullable|email',
-            'password' => 'required',
+           
             'mobile' => 'required',
         ]);
 
@@ -84,56 +82,32 @@ class DonorController extends Controller
         return view('donor.login');
     }
 
-    // public function login(Request $request)
-    // {
-     
-    //     $email = $request->input('email');
-    //     $password = $request->input('password');
-
-    //     // Validate the input data (you can add more validation rules as needed)
-    //     $validatedData = $request->validate([
-    //         'email' => 'required|email',
-    //         'password' => 'required',
-    //     ]);
-
-    //     // Perform login logic here, such as checking credentials against a database
-    //     $donor = Donor::where('email', $email)->first();
-     
-
-    //     if ($donor && password_verify($password, $donor->password)) {
-           
-    //         // Authentication successful
-            
-           
-    //         // You can store the authenticated donor's information in the session or use Laravel's authentication mechanisms
-    //         return redirect()->route('donor.dashboard')->with('message', 'Login successful!');
-    //     } else {
-    //         // Authentication failed
-    //         return redirect()->back()->withErrors(['email' => 'Invalid email or password.']);
-    //     }
-    // }
-
-
     public function login(Request $request)
     {
-        dd($request);
+     
         $email = $request->input('email');
         $password = $request->input('password');
+      
 
         $validatedData = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-        if (Auth::guard('donor')->attempt(['email' => $email, 'password' => $password])) {
-            // Authentication successful
+       
+        $donor = Donor::where('email', $email)->first();
+    
+        if ($donor && ($password == $donor->password)) {
+           
+            
             return redirect()->route('donor.dashboard')->with('message', 'Login successful!');
         } else {
-            // Authentication failed
+            
             return redirect()->back()->withErrors(['email' => 'Invalid email or password.']);
         }
     }
 
+
+    
 
 
     public function register(Request $request)
@@ -155,10 +129,7 @@ class DonorController extends Controller
         ]);
         $donor->save();
 
-        // You can log in the donor after registration if needed
-        // Auth::login($donor);
-
-        // Redirect to the donor dashboard or a thank-you page
+       
         return redirect()->route('donor.dashboard');
     }
 

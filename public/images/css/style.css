@@ -1,0 +1,69 @@
+
+
+/* Reset default browser styles */
+body, html {
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Global styles */
+  body {
+	font-family: 'Open Sans', sans-serif;
+	background-image: url("../../images/ppp.jpg");
+	/* background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url("../../images/ppp.jpg"); */
+	/* color: #333; */
+	line-height: 1.6;
+  }
+  
+  /* .container-fluid {i 
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+  } */
+  
+  /* Header styles */
+  header.top {
+	background-color: #f8f8f8;
+	padding: 10px;
+	box-shadow: 0 2px 4px rgba(500, 13, 13, 0.1);
+	/* display: flex; */
+	/* flex-direction: column; */
+	align-items: center;
+	text-align: center;
+  }
+  
+  nav {
+	width: 100%;
+  }
+  
+  nav a img {
+	height: 50px;
+	width: auto;
+  }
+  
+  .nav-links ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+  }
+  
+  .nav-links li {
+	margin-right: 20px;
+  }
+  
+  .nav-links a {
+	color: hwb(0 7% 13%);
+	text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+	color: hsl(172, 53%, 41%);
+  }
+  
+  
+  
+
+  
+ 

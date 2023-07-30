@@ -2,27 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BloodDonationRequest; 
 use Illuminate\Http\Request;
+
+
 
 class BloodDonationController extends Controller
 {
-    public function index()
-    {
-        $bloodDonatedUnits = 5; // Define and assign a value to the variable
-        // ... other data variables ...
+    // ... Other methods ...
 
-        return view('donation.index', compact(
-            'bloodDonatedUnits',
-            // ... other data variables ...
-        ));
+    public function storeRequest(Request $request)
+    {
+        // Validation (You can add validation rules here)
+        $validatedData = $request->validate([
+            'donor_name' => 'required|string|max:255',
+            'blood_group' => 'required|string|max:5',
+            'no_units' => 'required',
+            'disease' => 'required',
+            'status' => 'required',
+            // Add more fields as required
+        ]);
+
+        BloodDonationRequest::create([
+            'donor_name' => $validatedData['donor_name'], 
+            'blood_group' => $validatedData['blood_group'], 
+            'no_units' => $validatedData['no_units'], 
+            'disease' => $validatedData['disease'], 
+            'status' => 'pending',
+            
+        ]);
+
+        return redirect()->route('blood-donation.form')->with('success', 'Blood donation request submitted successfully!');
     }
-    // Private property to store the total donated units
-    private $totalDonatedUnits = 0;
 
     public function showForm()
     {
+        // Return the view for the blood donation form
         return view('blood.blood_donation_form');
     }
+    // Private property to store the total donated units
+    private $totalDonatedUnits = 0;
 
     public function submitForm(Request $request)
     {

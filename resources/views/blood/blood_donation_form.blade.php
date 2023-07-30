@@ -105,7 +105,7 @@ body {
 
     <h1>Blood Donation Form</h1>
     <div class="login-page">
-    <form action="/blood-donation" method="POST">
+    <form action="/blood-donation" method="POST" >
         @csrf
         <div class="form-group">
         <label for="blood_group">Blood Group:</label>

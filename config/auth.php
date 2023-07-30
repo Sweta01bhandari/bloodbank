@@ -42,9 +42,9 @@ return [
 
         ],
 
-        'donor' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'donors',
+            'provider' => 'admins',
         ],
     ],
 

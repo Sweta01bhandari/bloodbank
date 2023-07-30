@@ -28,6 +28,16 @@
         <input type="password" id="password_confirmation" name="password_confirmation" required>
     </div>
 
+    <div class="form-group">
+      <label for="password_confirmation">Confirm Password:</label>
+      <select  id="role_id" name="role_id" >
+        @foreach ($roles as $role)
+            <option value="{{ $role->id}}">{{$role->name}}</option>
+        @endforeach
+        </select>
+  </div>
+    
+
     <button type="submit" class="btn btn-primary">Register</button>
 </form>
 @endsection

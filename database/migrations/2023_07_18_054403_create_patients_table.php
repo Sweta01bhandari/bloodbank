@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->nullable();
-            $table->string('password');
             $table->string('mobile_nu');
             $table->timestamps();
         });

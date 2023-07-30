@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Patient;
+use Auth;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -21,16 +23,15 @@ class PatientController extends Controller
 
     
     public function store(Request $request)
-{
+      {
     $validatedData = $request->validate([
         'name' => 'required',
         'email' => 'nullable|email',
-        'password' => 'required',
+
         'mobile_nu' => 'required',
     ]);
 
     $patient = Patient::create($validatedData);
-
 
     return redirect()->route('patient.index');
 }
@@ -50,7 +51,6 @@ class PatientController extends Controller
     public function update(Request $request, Patient $patient)
 {
     $validatedData = $request->validate([
-        'id' => 'required',
         'name' => 'required',
         'email' => 'required|email',
         'password' => 'required|min:6',
@@ -128,11 +128,7 @@ public function register(Request $request)
     ]);
     $patient->save();
 
-    // You can log in the patient after registration if needed
-    // Auth::login($patient);
-
-    // Redirect to the patient dashboard or a thank-you page
-    return redirect()->route('patient.dashboard');
+    return redirect()->route('patient.login')->with('success', 'Registration successful! Please log in.');
 }
 
 public function showRegistrationForm()
@@ -140,7 +136,7 @@ public function showRegistrationForm()
     return view('patient.register'); // Assuming you have a 'patient.registration' view file for the registration form
 }
 
-// Donation Request
+
 // public function createDonationRequest(Request $request)
 // {
 //     // Validate the input data for donation request

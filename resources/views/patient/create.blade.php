@@ -20,13 +20,7 @@
                 <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required>
             </div>
         </div>
-
-        {{-- <div class="form-group row">
-            <label for="password" class="col-sm-2 col-form-label">Password:</label>
-            <div class="col-sm-10">
-                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
-            </div> --}}
-        </div>
+       </div>
 
         <div class="form-group row">
             <label for="mobile" class="col-sm-2 col-form-label">Mobile:</label>
@@ -34,10 +28,7 @@
                 <input type="text" name="mobile_nu" id="mobile_nu" class="form-control" placeholder="Enter your mobile" required>
             </div>
         </div>
-
-     
-
-        <div class="form-group row">
+         <div class="form-group row">
             <div class="col-sm-10 offset-sm-2">
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>

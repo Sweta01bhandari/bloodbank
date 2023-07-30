@@ -11,13 +11,8 @@ class CreateDonorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password');
-            $table->string('mobile');
-            $table->string('blood_group');
-            $table->integer('num_units');
-            $table->text('diseases')->nullable();
-            $table->string('blood_type');
-            $table->timestamps();
+         $table->string('mobile');
+         $table->timestamps();
         });
     }
 
